@@ -13,6 +13,9 @@ fastapi = "^0.112.0"
 python-dotenv = "^1.0.1"
 docker = "^7.1.0"
 kfp = "^2.8.0"
+sqlalchemy = "^2.0.32"
+pymysql = "^1.1.1"
+cryptography = "^43.0.0"
 
 
 [build-system]

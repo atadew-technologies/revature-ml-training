@@ -3,7 +3,7 @@ from kfp import dsl
 
 local.init(runner=local.DockerRunner())
 
-@dsl.component
+@dsl.component(base_image='python:3.11', packages_to_install=['google-cloud-speech'])
 def add(a: int, b: int) -> int:
     return a + b
 
