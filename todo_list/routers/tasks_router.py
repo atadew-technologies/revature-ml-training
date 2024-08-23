@@ -18,7 +18,7 @@ async def createNewTask(todo: Todo):
     return CreateTaskResponse
 
 
-@api_router.get("/task/all", response_model=AllTasksResponse)
+@api_router.get("/task/all")
 async def readAllTasks(svc: TodoSVC = Depends(TodoSVC)):
     return svc.getTodoList()
 

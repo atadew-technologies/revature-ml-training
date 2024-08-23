@@ -6,4 +6,4 @@ class Tasks(BaseModel):
 
 
 class AllTasksResponse(BaseModel):
-    tasks: list = [Tasks]
+    tasks: Tasks = [Tasks]

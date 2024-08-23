@@ -6,11 +6,11 @@ from fastapi import FastAPI
 
 
 from dotenv import load_dotenv
+env_path = Path("./") / ".env"
+load_dotenv(env_path)
 
 from todo_list.routers import default_router
 
-env_path = Path("./") / ".env"
-load_dotenv(env_path)
 
 app = FastAPI(title="FastAPI Training")
 
