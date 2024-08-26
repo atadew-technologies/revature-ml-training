@@ -1,20 +1,20 @@
 from fastapi import Depends
 from sqlalchemy.orm import sessionmaker
 
-from todo_list.db.model.todo import Todo
-from todo_list.db.session_local import get_session
+from todo_list.db.model.authenticate import Authenticate
 
 
-class TodoDB:
+
+class AuthenticateDB:
 
     def __init__(self, session: sessionmaker):
         self.session = session
 
-    def getTodoList(self):
+    def getAPIKey(self, apiKey):
 
         with self.session.begin() as session:
             try:
-                result = session.query(Todo).all()
+                result = session.query(Authenticate).filter(Authenticate.api_key == apiKey).first()
                 return result
             except Exception as e:
                 session.rollback()
